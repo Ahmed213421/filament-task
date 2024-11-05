@@ -99,4 +99,5 @@ class AuthorResource extends Resource
             // 'edit' => Pages\EditAuthor::route('/{record}/edit'),
         ];
     }
+
 }

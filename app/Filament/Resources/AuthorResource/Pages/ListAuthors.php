@@ -16,4 +16,16 @@ class ListAuthors extends ListRecords
             Actions\CreateAction::make(),
         ];
     }
+
+    // public static function getRoute(): string
+    // {
+    //     return '/admin/authors';
+    // }
+
+    // public static function getMiddleware(): array
+    // {
+    //     return ['author'];  // Apply the 'admin' middleware
+    // }
+
+
 }

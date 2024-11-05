@@ -68,8 +68,6 @@ class CategoryResource extends Resource
                     ->searchable(),
                 Tables\Columns\IconColumn::make('visibility')
                     ->boolean(),
-                // Tables\Columns\TextColumn::make('description')
-                // ->html(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

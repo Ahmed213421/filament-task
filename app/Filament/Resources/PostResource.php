@@ -68,10 +68,10 @@ class PostResource extends Resource
                     ->columnSpan('full'),
                     Hidden::make('user_id')
                     ->default(auth()->user()->id),
-                    Select::make('user_id')
-                    ->options(function () {
-                        return User::where('role', 'author')->pluck('name', 'id');
-                    }),
+                    // Select::make('user_id')
+                    // ->options(function () {
+                    //     return User::where('role', 'author')->pluck('name', 'id');
+                    // }),
                     Select::make('category_id')
                     ->required()
                     ->relationship('category','name')
