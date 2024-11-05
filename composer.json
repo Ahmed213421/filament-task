@@ -10,6 +10,7 @@
         "codeat3/blade-google-material-design-icons": "^1.19",
         "davidhsianturi/blade-bootstrap-icons": "^1.5",
         "filament/filament": "3.2",
+        "filament/infolists": "3.2",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^10.0",
         "laravel/sanctum": "^3.2",

@@ -10,9 +10,12 @@ use Filament\Forms;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Form;
 use Filament\Forms\Set;
+use Filament\Infolists\Components\TextEntry;
+use Filament\Infolists\Infolist;
 use Filament\Resources\Resource;
 use Illuminate\Support\Str;
 use Filament\Tables;
+use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -103,13 +106,26 @@ class CategoryResource extends Resource
         ];
     }
 
+    public static function infolist(Infolist $infolist): Infolist
+{
+    return $infolist
+        ->schema([
+            TextEntry::make('name')->columnSpanFull(),
+            TextEntry::make('slug')->columnSpanFull(),
+            TextEntry::make('description')->columnSpanFull()->html(),
+            IconColumn::make('visibility')->columnSpanFull(),
+            TextEntry::make('updated_at')->columnSpanFull()->dateTime(),
+
+        ]);
+}
+
     public static function getPages(): array
     {
         return [
             'index' => Pages\ListCategories::route('/'),
             // 'create' => Pages\CreateCategory::route('/create'),
             'edit' => Pages\EditCategory::route('/{record}/edit'),
-            'view' => pages\ViewCategory::route(('/{record}')),
+            // 'view' => pages\ViewCategory::route(('/{record}')),
         ];
     }
 }

@@ -31,3 +31,9 @@ Route::get('comment',function(){
 
     return back();
 })->name('comment.store');
+
+Route::any('delete/comment/{id}',function($id){
+    $comment = Comment::find($id)->delete();
+
+    return back();
+})->name('comment.delete');

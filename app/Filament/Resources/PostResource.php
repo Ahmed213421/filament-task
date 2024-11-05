@@ -111,12 +111,14 @@ class PostResource extends Resource
                 ->url(fn (Post $post) => PostResource::getUrl('comments',[
                     'record' => $post->id,
                 ])),
+                TextColumn::make('user.name')->state(fn($record) => $record->user->role == 'author')->label('Author'),
                 TextColumn::make('comments.user.name')
                 // ->formatStateUsing(function ($state) {
                 //     return implode(', ', $state->pluck('user.name')->toArray()); // Join user names
                 // })
                 ->label('comment authors'),
-                TextColumn::make('category.name'),
+                TextColumn::make('category.name')->toggleable(true),
+                TextColumn::make('slug')->toggleable(true),
             TextColumn::make('status')->badge()
             ->color(fn (string $state): string => match ($state) {
                     'published' => 'gray',

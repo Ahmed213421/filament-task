@@ -4,6 +4,7 @@ namespace App\Filament\Resources\PostResource\Pages;
 
 use App\Filament\Resources\PostResource;
 use Filament\Actions;
+use Filament\Resources\Components\Tab;
 use Filament\Resources\Pages\ViewRecord;
 
 class ViewPost extends ViewRecord
@@ -16,4 +17,12 @@ class ViewPost extends ViewRecord
             Actions\EditAction::make(),
         ];
     }
+
+    public static function getTabs(): array
+{
+    return [
+        Tab::make('all'),
+    ];
+}
+
 }
