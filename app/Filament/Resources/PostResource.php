@@ -111,7 +111,7 @@ class PostResource extends Resource
                 ->url(fn (Post $post) => PostResource::getUrl('comments',[
                     'record' => $post->id,
                 ])),
-                TextColumn::make('user.name')->state(fn($record) => $record->user->role == 'author')->label('Author'),
+                TextColumn::make('user.name')->label('Author'),
                 TextColumn::make('comments.user.name')
                 // ->formatStateUsing(function ($state) {
                 //     return implode(', ', $state->pluck('user.name')->toArray()); // Join user names

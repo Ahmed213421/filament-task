@@ -18,10 +18,11 @@ class ViewPost extends ViewRecord
         ];
     }
 
-    public static function getTabs(): array
+
+public function getTabs(): array
 {
     return [
-        Tab::make('all'),
+        'all' => Tab::make('All customers'),
     ];
 }
 

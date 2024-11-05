@@ -12,6 +12,7 @@ use Filament\Forms\Form;
 use Filament\Forms\Set;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Infolists\Infolist;
+use Filament\Resources\Components\Tab;
 use Filament\Resources\Resource;
 use Illuminate\Support\Str;
 use Filament\Tables;
@@ -113,7 +114,7 @@ class CategoryResource extends Resource
             TextEntry::make('name')->columnSpanFull(),
             TextEntry::make('slug')->columnSpanFull(),
             TextEntry::make('description')->columnSpanFull()->html(),
-            IconColumn::make('visibility')->columnSpanFull(),
+            // IconColumn::make('visibility')->columnSpanFull(),
             TextEntry::make('updated_at')->columnSpanFull()->dateTime(),
 
         ]);
@@ -128,4 +129,5 @@ class CategoryResource extends Resource
             // 'view' => pages\ViewCategory::route(('/{record}')),
         ];
     }
+
 }

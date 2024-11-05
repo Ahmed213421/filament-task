@@ -19,5 +19,11 @@ class ListPosts extends ListRecords
     }
 
 
+//     public function getTabs(): array
+// {
+//     return [
+//         'all' => Tab::make('All customers'),
+//     ];
+// }
 
 }
