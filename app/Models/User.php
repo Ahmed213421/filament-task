@@ -54,6 +54,10 @@ class User extends Authenticatable
     }
 
     public function post(){
-        return $this->bel(Post::class,'post_id');
+        return $this->belongsTo(Post::class,'post_id');
+    }
+
+    public function parkings(){
+        return $this->hasMany(Parking::class,'parking_id');
     }
 }
